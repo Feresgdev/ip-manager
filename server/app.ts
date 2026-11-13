@@ -9,6 +9,8 @@ import requestContext from "./src/global/middleware/requestContext.middleware";
 import { compressionMiddleware } from "./src/global/middleware/compression.middleware";
 import emailRouter from "./src/modules/email/email.route";
 import systemRouter from "./src/modules/system/system.routes";
+import crowlerRouter from "./src/modules/ip-crowler/ip-crowler.routes";
+
 import { globalRateLimiter } from "./src/global/middleware/rateLimit.middleware";
 import helmet from "helmet";
 
@@ -32,6 +34,7 @@ if (process.env.NODE_ENV !== "production") {
 
 app.use(globalRateLimiter);
 
+app.use("/api/crowler", crowlerRouter);
 app.use("/api/system", systemRouter);
 
 app.use("/api/email", emailRouter);

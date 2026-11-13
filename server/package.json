@@ -1,5 +1,5 @@
 {
-  "name": "express-typescript-docker-starter",
+  "name": "ip-manager",
   "version": "1.0.0",
   "private": true,
   "scripts": {
